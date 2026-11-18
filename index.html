@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>HipoBuy spreadsheet | CAFANS Product Finder &amp; Buying Guide</title>
+  <meta name="description" content="Browse shoes, hoodies, T-shirts and jackets from CAFANS. Filter HipoBuy spreadsheet finds by price and check sizing, QC photos and shipping before ordering.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <!-- index.html. After deployment, add a self-referencing canonical for the public URL.
+       Indexing submission is pending a live URL and verified property access.
+       Google Search Console: inspect the live URL and request indexing.
+       Bing Webmaster Tools: submit the live URL via URL Submission.
+       Search research references: https://www.ssfinds.com/hipobuy-spreadsheet,
+       https://hipospreadsheets.com/, https://grails.fit/hipobuy-spreadsheet.
+       The page combines searchable listings and QC guidance with an editable landed-cost estimate. -->
+  <style>
+    :root{color-scheme:dark;--bg:#101611;--panel:#19241c;--line:#3b5040;--ink:#f5f8ee;--muted:#becdbe;--lime:#d4f796;--serif:Georgia,serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.55 system-ui,sans-serif}
+    a{color:var(--lime);text-underline-offset:.24em}
+    .wrap{width:min(70rem,calc(100% - 2rem));margin-inline:auto}
+    nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-block:1rem}
+    nav a:first-child{font-weight:800;letter-spacing:.08em}
+    .hero{text-align:center;padding:clamp(4rem,10vw,8rem) 1rem;background:radial-gradient(ellipse at 50% 0%,#365640,transparent 76%),#141e17;border-block:1px solid var(--line)}
+    h1,h2{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0}
+    h1{font-size:clamp(2.6rem,7vw,6rem);letter-spacing:-.045em}
+    h2{font-size:clamp(1.85rem,4vw,3rem)}
+    .hero p{max-width:39rem;margin:1.25rem auto 1.75rem}
+    p{color:var(--muted)}
+    .actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+    .cta{display:inline-block;text-decoration:none;border:1px solid var(--lime);border-radius:2rem;padding:.65rem 1.15rem;font-weight:700}
+    .primary{background:var(--lime);color:#162013}
+    main section{padding-block:2.75rem;border-bottom:1px solid var(--line)}
+    .controls,.budget-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:1rem;margin-block:1rem}
+    label{display:grid;gap:.35rem;font-weight:600}
+    input,select{width:100%;padding:.65rem;border:1px solid var(--line);border-radius:.5rem;background:var(--panel);color:var(--ink);font:inherit}
+    :focus-visible{outline:3px solid var(--lime);outline-offset:4px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem}
+    article,details{background:var(--panel);border:1px solid var(--line);border-radius:.8rem;padding:1.1rem}
+    article{display:flex;flex-direction:column;align-items:flex-start;min-height:11rem}
+    article h3{margin:.45rem 0;font-size:1.25rem}
+    article p{margin:0 0 .85rem}
+    article a{margin-top:auto}
+    .category{color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.09em}
+    .count{min-height:1.55em}
+    [hidden]{display:none!important}
+    li+li,details+details{margin-top:.65rem}
+    summary{cursor:pointer;font-weight:700}
+    footer{padding-block:1rem 2rem}
+  </style>
+<link rel="canonical" href="https://kakobuyfinds.github.io/xlbig/">
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a href="https://cafans.com">CAFANS</a>
+      <a href="#catalog">Product catalog</a>
+      <a href="#buying">Buying guide</a>
+    </nav>
+    <div class="hero">
+      <h1>HipoBuy spreadsheet</h1>
+      <p>Find shoes, hoodies, tees and jackets from the CAFANS catalog. Compare listed prices, check sizing and estimate what your order could cost after shipping.</p>
+      <div class="actions">
+        <a class="cta primary" href="https://cafans.com">HipoBuy spreadsheet</a>
+        <a class="cta" href="https://cafans.com">Buy it now</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="catalog" aria-labelledby="catalog-title">
+      <h2 id="catalog-title">Featured CAFANS products</h2>
+      <p>Prices are USD estimates from CAFANS. Open the product page for current listing details and available buying options.</p>
+      <div class="controls" id="filters" hidden>
+        <label for="query">Search products
+          <input id="query" type="search" placeholder="Try hoodie or slides">
+        </label>
+        <label for="category">Category
+          <select id="category">
+            <option value="">All categories</option>
+            <option>Shoes</option>
+            <option>Hoodies and sweatshirts</option>
+            <option>T-shirts</option>
+            <option>Jackets</option>
+          </select>
+        </label>
+        <label for="ceiling">Maximum item price (USD)
+          <input id="ceiling" type="number" min="0" step="0.01" placeholder="Any price">
+        </label>
+      </div>
+      <p class="count" id="count" role="status" hidden></p>
+      <div class="grid" id="products">
+        <article data-category="Shoes" data-price="62.36">
+          <span class="category">Shoes</span><h3>Leather Slides</h3><p>$62.36 USD</p>
+          <a href="https://cafans.com/goods-158791.html" aria-label="View Leather Slides on CAFANS">View listing</a>
+        </article>
+        <article data-category="Shoes" data-price="46.67">
+          <span class="category">Shoes</span><h3>Platform Slides</h3><p>$46.67 USD</p>
+          <a href="https://cafans.com/goods-158790.html" aria-label="View Platform Slides on CAFANS">View listing</a>
+        </article>
+        <article data-category="Hoodies and sweatshirts" data-price="27.50">
+          <span class="category">Hoodies and sweatshirts</span><h3>Sweatshirt</h3><p>$27.50 USD</p>
+          <a href="https://cafans.com/goods-158792.html" aria-label="View Sweatshirt on CAFANS">View listing</a>
+        </article>
+        <article data-category="Hoodies and sweatshirts" data-price="37.22">
+          <span class="category">Hoodies and sweatshirts</span><h3>Thug Club – Rock Hoodie</h3><p>$37.22 USD</p>
+          <a href="https://cafans.com/goods-158280.html" aria-label="View Thug Club Rock Hoodie on CAFANS">View listing</a>
+        </article>
+        <article data-category="T-shirts" data-price="32.64">
+          <span class="category">T-shirts</span><h3>Unisex Embroidered Oversized T-Shirt</h3><p>$32.64 USD</p>
+          <a href="https://cafans.com/goods-158200.html" aria-label="View Unisex Embroidered Oversized T-Shirt on CAFANS">View listing</a>
+        </article>
+        <article data-category="Jackets" data-price="42.78">
+          <span class="category">Jackets</span><h3>Corteiz Jacket</h3><p>$42.78 USD</p>
+          <a href="https://cafans.com/goods-158279.html" aria-label="View Corteiz Jacket on CAFANS">View listing</a>
+        </article>
+      </div>
+    </section>
+    <section id="buying" aria-labelledby="buying-title">
+      <h2 id="buying-title">How to order through HipoBuy</h2>
+      <ol>
+        <li>Open a CAFANS listing, check that your size and color are available, then look for HipoBuy under <strong>Buy Link</strong>.</li>
+        <li>Compare measurements. For shoes, check whether the size chart gives foot length or insole length. For tops, compare chest width and body length with a garment that fits you, using the same measuring method.</li>
+        <li>If warehouse quality-control photos are available, compare the received color, size label and visible condition with the listing. Ask for a measurement photo if the size is uncertain, and check the seller’s return window before approving shipment.</li>
+        <li>Compare shipping quotes for your destination using the final parcel dimensions. A bulky box can raise the billable weight even when the item is light.</li>
+      </ol>
+    </section>
+    <section id="budget" aria-labelledby="budget-title" hidden>
+      <h2 id="budget-title">Estimate your delivered cost</h2>
+      <p>Use the same currency for all amounts. Include domestic delivery and agent charges under fees if they apply. Add taxes or duties there if they are due separately.</p>
+      <div class="budget-fields">
+        <label for="items">Item subtotal (USD)<input id="items" type="number" min="0" step="0.01" placeholder="0.00"></label>
+        <label for="shipping">International shipping (USD)<input id="shipping" type="number" min="0" step="0.01" placeholder="0.00"></label>
+        <label for="fees">Other fees (USD)<input id="fees" type="number" min="0" step="0.01" placeholder="0.00"></label>
+      </div>
+      <p>Estimated total <strong><output id="total" for="items shipping fees">Enter your amounts</output></strong></p>
+    </section>
+    <section aria-labelledby="faq-title">
+      <h2 id="faq-title">HipoBuy spreadsheet FAQ</h2>
+      <details>
+        <summary>What is a HipoBuy spreadsheet?</summary>
+        <p>It is a product directory for finding and comparing items you may want to order through the HipoBuy shopping agent. The listings on this page open on CAFANS, where you can check each item and its buying options.</p>
+      </details>
+      <details>
+        <summary>Do the listed prices include international shipping?</summary>
+        <p>The amounts shown are estimated item prices. Check your shipping quote and any service charges, taxes or duties for your destination before adding up the order.</p>
+      </details>
+      <details>
+        <summary>What should I check if a listing is unavailable?</summary>
+        <p>Try searching CAFANS for the model or item name. Compare the exact variant, measurements and seller terms before choosing a replacement.</p>
+      </details>
+    </section>
+  </main>
+  <footer class="wrap">
+    <p>Independent shopping guide. Product listings and estimated prices are sourced from <a href="https://cafans.com">CAFANS</a>.</p>
+  </footer>
+  <script>
+    const filters = document.getElementById('filters');
+    const query = document.getElementById('query');
+    const category = document.getElementById('category');
+    const ceiling = document.getElementById('ceiling');
+    const count = document.getElementById('count');
+    const products = Array.from(document.querySelectorAll('#products article'));
+
+    function filterProducts() {
+      const term = query.value.trim().toLowerCase();
+      const validBudget = ceiling.validity.valid;
+      const limit = ceiling.value === '' ? Infinity : ceiling.valueAsNumber;
+      let matches = 0;
+
+      for (const product of products) {
+        const text = (product.querySelector('h3').textContent + ' ' + product.dataset.category).toLowerCase();
+        const categoryMatches = !category.value || product.dataset.category === category.value;
+        const priceMatches = !validBudget || Number(product.dataset.price) <= limit;
+        product.hidden = !(text.includes(term) && categoryMatches && priceMatches);
+        if (!product.hidden) matches++;
+      }
+
+      count.textContent = !validBudget
+        ? 'Enter a valid maximum price in USD.'
+        : `${matches} of ${products.length} products shown`;
+    }
+
+    filters.addEventListener('input', filterProducts);
+    filters.hidden = false;
+    count.hidden = false;
+    filterProducts();
+
+    const budget = document.getElementById('budget');
+    const amounts = Array.from(budget.querySelectorAll('input'));
+    const total = document.getElementById('total');
+    const currency = new Intl.NumberFormat('en-US', {style:'currency',currency:'USD'});
+
+    budget.addEventListener('input', () => {
+      if (amounts.some(input => !input.validity.valid)) {
+        total.textContent = 'Enter valid USD amounts';
+        return;
+      }
+      if (amounts.every(input => input.value === '')) {
+        total.textContent = 'Enter your amounts';
+        return;
+      }
+      const cents = amounts.reduce((sum, input) => sum + Math.round(Number(input.value) * 100), 0);
+      total.textContent = `${currency.format(cents / 100)} USD`;
+    });
+    budget.hidden = false;
+  </script>
+</body>
+</html>
